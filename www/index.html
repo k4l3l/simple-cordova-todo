@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.3.1207/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.3.1207/styles/kendo.default.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.3.1207/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+<div data-role="view" data-model="app.todoListViewModel">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">Todo List</span>
+            <a href="#" data-role="button" data-align="right" data-icon="add" data-bind="click: addTodo">Add</a>
+        </div>
+    </header>
+    <ul data-role="listview" data-bind="source: todos" data-template="todo-template"></ul>
+    <script id="todo-template" type="text/x-kendo-template">
+        <li>
+            <span data-bind="text: text"></span>
+            <a data-role="button" data-icon="delete" data-align="right" data-bind="click: removeTodo"></a>
+        </li>
+    </script>
+</div>
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
